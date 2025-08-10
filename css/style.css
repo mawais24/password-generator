@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #2d3748;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #718096;
+  margin-bottom: 60px;
+  font-weight: 400;
+}
+
+.toggle-controls {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a5568;
+  user-select: none;
+  cursor: pointer;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  background: #cbd5e0;
+  border-radius: 26px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.toggle-switch.active {
+  background: #667eea;
+}
+
+.toggle-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.active::after {
+  transform: translateX(24px);
+}
+
+.length-control {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.length-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.length-input {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  width: 80px;
+  text-align: center;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.length-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 20px 60px;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 60px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+  width: 100%;
+  max-width: 400px;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.5);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+.password-types {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.password-card {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 30px 25px;
+  flex: 1;
+  min-width: 240px;
+  max-width: 280px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.password-card:hover {
+  border-color: #e2e8f0;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+.password-display {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+    "Courier New", monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2d3748;
+  letter-spacing: 1px;
+  position: relative;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.password-display::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background: #48bb78;
+  border-radius: 2px;
+}
+
+.password-display.complex::after {
+  background: #ed8936;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 40px 25px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .length-control {
+    margin-bottom: 25px;
+  }
+
+  .length-label {
+    font-size: 16px;
+  }
+
+  .length-input {
+    font-size: 16px;
+    padding: 10px 14px;
+    width: 70px;
+  }
+
+  .generate-btn {
+    font-size: 20px;
+    padding: 18px 50px;
+    margin-bottom: 40px;
+  }
+
+  .password-types {
+    gap: 20px;
+  }
+
+  .password-card {
+    min-width: 100%;
+    padding: 25px 20px;
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+
+  .password-display {
+    font-size: 16px;
+    padding: 14px 16px;
+    min-height: 50px;
+    line-height: 1.3;
+  }
+}

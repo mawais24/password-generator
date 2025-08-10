@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Password Generator</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Secure Password Generator</h1>
+      <p class="subtitle">Create strong, unique passwords with ease.</p>
+      <div class="length-control">
+        <label class="length-label" for="password-length"
+          >Password Length:</label
+        >
+        <input
+          type="number"
+          id="password-length"
+          class="length-input"
+          value="15"
+          min="8"
+          max="50"
+        />
+      </div>
+      <div class="toggle-controls">
+        <div class="toggle-group">
+          <label class="toggle-label" for="include-numbers"
+            >Include Numbers</label
+          >
+          <button
+            class="toggle-switch active"
+            id="include-numbers"
+            onclick="toggleOption('numbers')"
+          ></button>
+        </div>
+        <div class="toggle-group">
+          <label class="toggle-label" for="include-symbols"
+            >Include Symbols</label
+          >
+          <button
+            class="toggle-switch active"
+            id="include-symbols"
+            onclick="toggleOption('symbols')"
+          ></button>
+        </div>
+      </div>
+      <button class="generate-btn" onclick="generatePasswords()">
+        Generate Password
+      </button>
+
+      <div class="password-types">
+        <div class="password-card">
+          <div class="password-display copyable-field" id="passwordOne"></div>
+        </div>
+
+        <div class="password-card">
+          <div
+            class="password-display complex copyable-field"
+            id="passwordTwo"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
