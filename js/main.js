@@ -146,11 +146,20 @@ const copyableFields = document.querySelectorAll(".copyable-field");
 console.log(copyableFields);
 copyableFields.forEach((field) => {
   field.addEventListener("click", function () {
-    const textToCopy = this.textContent;
+    const originalText = this.textContent.trim();
+
     navigator.clipboard
-      .writeText(textToCopy)
+      .writeText(originalText)
       .then(() => {
-        console.log("Text copied to clipboard!");
+        // Show copied message
+        this.textContent = "Copied!";
+        this.classList.add("copied");
+
+        // Restore original password after 1 second
+        setTimeout(() => {
+          this.textContent = originalText;
+          this.classList.remove("copied");
+        }, 1000);
       })
       .catch((err) => {
         console.error("Failed to copy text: ", err);
